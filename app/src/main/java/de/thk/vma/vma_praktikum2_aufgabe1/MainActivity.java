@@ -21,7 +21,6 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
 
     String stadt;
-    String ausgabe;
     int counterAll = 0;
     int counterRadweg = 0;
 
@@ -39,18 +38,18 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        setContentView(R.layout.tablelayout);
+        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.tablelayout);
 
         //ArrayList der Falschparker erstellen
         falschparker = new ArrayList<Falschparker>();
 
         //RadioGroup setzen
-        group = (RadioGroup) findViewById(R.id.radiogroup);
+        group = findViewById(R.id.radiogroup);
         group.setOnCheckedChangeListener(new MyRadioGroupOnCheckedChangeListener());
 
         //EditTexts erstellen und Tastatur verstecken, wenn EditTexts Focus verliert
-        editText = (EditText) findViewById(R.id.input_text);
+        editText = findViewById(R.id.input_text);
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -59,7 +58,7 @@ public class MainActivity extends Activity {
                 }
             }
         });
-        editNumber = (EditText) findViewById(R.id.input_number);
+        editNumber = findViewById(R.id.input_number);
         editNumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -70,23 +69,23 @@ public class MainActivity extends Activity {
         });
 
         //Ausgabefelder initialisieren
-        anz_all = (EditText) findViewById(R.id.anz_all);
-        anz_rad = (EditText) findViewById(R.id.anz_rad);
+        anz_all = findViewById(R.id.anz_all);
+        anz_rad = findViewById(R.id.anz_rad);
         anz_all.setText("0");
         anz_rad.setText("0");
-        letzter_input = (EditText) findViewById(R.id.letzer_input);
-        vorletzter_input = (EditText) findViewById(R.id.vorletzer_input);
+        letzter_input = findViewById(R.id.letzer_input);
+        vorletzter_input = findViewById(R.id.vorletzer_input);
         letzter_input.setText("");
         vorletzter_input.setText("");
 
         //Checkbox initialisieren
-        checkbox = (CheckBox) findViewById(R.id.checkbox);
+        checkbox = findViewById(R.id.checkbox);
         checkbox.setOnCheckedChangeListener(new MyCheckboxOnCheckedChangeListener());
 
         //OK-Button und Clear-Button initialisieren
-        final Button buttonOK = (Button) findViewById(R.id.buttonOK);
+        final Button buttonOK = findViewById(R.id.buttonOK);
         buttonOK.setOnClickListener(new ButtonListenerOK());
-        final Button buttonClear = (Button) findViewById(R.id.buttonClear);
+        final Button buttonClear = findViewById(R.id.buttonClear);
         buttonClear.setOnClickListener(new ButtonListenerClear());
 
         //Toast.makeText(this,"Activity 1: onCreate()", Toast.LENGTH_LONG).show();
@@ -182,6 +181,7 @@ public class MainActivity extends Activity {
         }
     }
 
+    //Klasse Falschparker
     class Falschparker {
         private String stadt;
         private String name;

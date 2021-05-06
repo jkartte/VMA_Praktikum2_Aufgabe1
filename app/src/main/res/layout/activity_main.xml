@@ -1,18 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_marginTop="20dp"
+    >
 
-    <TextView
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/darker_gray"/>
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <RadioButton android:id="@+id/radiobutton_K"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/K"/>
+
+            <RadioButton android:id="@+id/radiobutton_BM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/BM"/>
+
+            <RadioButton android:id="@+id/radiobutton_GL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/GL"/>
+        </RadioGroup>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="textCapCharacters"
+            android:layout_weight="1"
+            android:maxLength="2"/>
+        <EditText
+            android:id="@+id/input_number"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_weight="1"
+            android:maxLength="4"/>
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:text="@string/checkbox1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <Button
+            android:id="@+id/buttonOK"
+            android:text="@string/Ok"
+            android:textSize="12pt"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            />
+        <Button
+            android:id="@+id/buttonClear"
+            android:text="@string/Clear"
+            android:textSize="12pt"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/anz_all"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:inputType="none"/>
+        <EditText
+            android:id="@+id/anz_rad"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:inputType="none"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/letzer_input"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:enabled="false"
+            android:inputType="none"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/vorletzer_input"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:enabled="false"
+            android:inputType="none"/>
+    </LinearLayout>
+
+
+</LinearLayout>
