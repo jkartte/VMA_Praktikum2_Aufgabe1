@@ -162,22 +162,23 @@ public class MainActivity extends Activity {
             RadioButton radioButton_GL = (RadioButton) findViewById(R.id.radiobutton_GL);
             radioButton_GL.setChecked(false);
 
-            //EditText-Felder und Counter zurücksetzen
+            //Eingabefelder zurücksetzen
             editText.setText("");
             editNumber.setText("");
+
+            //Checkbox zurücksetzen
+            if (checkbox.isChecked())
+                checkbox.toggle();
+
+            //Falls alles zurückgesetzt werden soll:
+            /*falschparker.clear();         //Liste an Falschparkern zurücksetzen
             anz_all.setText("0");
             anz_rad.setText("0");
             counterAll=0;
             counterRadweg=0;
             letzter_input.setText("");
             vorletzter_input.setText("");
-
-            //Checkbox zurücksetzen
-            if (checkbox.isChecked())
-                checkbox.toggle();
-
-            //Liste an Falschparkern zurücksetzen
-            falschparker.clear();
+             */
         }
     }
 
